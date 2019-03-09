@@ -1,7 +1,69 @@
 <?php 
-	class addbk 
+	class Addbk 
 	{
-		public $id, $company, $daybk, $monthbk, $yearbk, $timehst, $timemst, $timehend, $timemend, $spec, $rec, $howof;
+		private $id = 0;
+		private $company ="";
+		private $daybk ="";
+		private $monthbk="";
+		private $yearbk="";
+		private $timehst="";
+		private $timemst="";
+		private $timehend="";
+		private $timemend="";
+		private $spec="";
+		private $rec="";
+		private $howof="";
+		
+		function __construct($bkRecord) {
+			if (isset($bkRecord['id'])) { 
+        		$this->id = $bkRecord['id'];
+         		if ($this->id == '') { unset($this->id);}
+      			} 
+			if (isset($bkRecord['company'])) { 
+        		$this->company = $bkRecord['company'];
+         		if ($this->company == '') { unset($this->company);}
+      			}
+			if (isset($bkRecord['daybk'])) { 
+        		$this->id = $bkRecord['daybk'];
+         		if ($this->daybk == '') { unset($this->daybk);}
+      			}
+			if (isset($bkRecord['monthbk'])) { 
+        		$this->monthbk = $bkRecord['id'];
+         		if ($this->monthbk == '') { unset($this->monthbk);}
+      			}
+			if (isset($bkRecord['yaerbk'])) { 
+        		$this->yearbk = $bkRecord['yearbk'];
+         		if ($this->yearbk == '') { unset($this->yearbk);}
+      			}
+			if (isset($bkRecord['timehst'])) { 
+        		$this->timehst = $bkRecord['timehst'];
+         		if ($this->timehst == '') { unset($this->timehst);}
+      			}
+			if (isset($bkRecord['timemst'])) { 
+        		$this->timemst = $bkRecord['timemst'];
+         		if ($this->timemst == '') { unset($this->timemst);}
+      			}
+			if (isset($bkRecord['timehend'])) { 
+        		$this->timehend = $bkRecord['timehend'];
+         		if ($this->timehend == '') { unset($this->timehend);}
+      			}
+			if (isset($bkRecord['timemend'])) { 
+        		$this->timemend = $bkRecord['timemend'];
+         		if ($this->timemend == '') { unset($this->timemend);}
+      			}
+			if (isset($bkRecord['spec'])) { 
+        		$this->spec = $bkRecord['spec'];
+         		if ($this->spec == '') { unset($this->spec);}
+      			}
+			if (isset($bkRecord['rec'])) { 
+        		$this->rec = $bkRecord['rec'];
+         		if ($this->rec == '') { unset($this->rec);}
+      			}
+			if (isset($bkRecord['howof'])) { 
+        		$this->howof = $bkRecord['howhf'];
+         		if ($this->howof == '') { unset($this->howof);}
+      			}
+    			}
 		function savebk() {
 			include_once ('bd.php');
 			$link = mysqli_connect($host, $user, $passworddb, $database) or die("Ошибка " . mysqli_error($link));
