@@ -1,5 +1,5 @@
 <?php
-class addemp{   
+class Addemp{   
 	   public $name, $email;
 
     function saveemp ()
@@ -35,7 +35,7 @@ class addemp{
     $regex = '/^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/';
 
     if(preg_match($regex, $email)){
-    	$employee = new addemp;
+    	$employee = new Addemp();
     	$employee->name = $name;
     	$employee->email = $email;
     	$employee->saveemp();
